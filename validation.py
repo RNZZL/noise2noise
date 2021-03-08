@@ -53,7 +53,8 @@ class ValidationSet:
             h = orig_img.shape[1]
 
             noisy_img = noise_func(orig_img)
-            pred255 = util.infer_image(net, noisy_img)
+            #pred255 = util.infer_image(net, noisy_img) 
+            pred255 = util.infer_image(net, orig_img)##edited
             orig255 = util.clip_to_uint8(orig_img)
             assert (pred255.shape[2] == w and pred255.shape[1] == h)
 
